@@ -1,0 +1,25 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add book id</title>
+  </head>
+  <body>
+    <div>
+      <div>
+        <form action="{% url 'get_books' %}" method="POST">
+          <h2>To view a book</h2>
+
+          {% csrf_token%}
+          <label for="pk"> Book to view</label>
+          <input type="number" name="pk" min="0" />
+          <button type="submit">Yes</button>
+        </form>
+      </div>
+
+      <div>
+        <a href="{% url 'home' %}"> Back</a>
+      </div>
+    </div>
+  </body>
+</html>

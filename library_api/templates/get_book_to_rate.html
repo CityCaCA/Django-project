@@ -1,0 +1,21 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rate Book</title>
+  </head>
+  <body>
+    <div>
+      <form action="{% url 'get_book_to_rate' %}" method="POST">
+        <h2>To rate a book</h2>
+
+        {% csrf_token%}
+        <label for="pk"> Book to query</label>
+        <input type="number" name="pk" min="0" />
+        <label for="rating_value"> Rating for book</label>
+        <input type="number" name="rating_value" min="0" max="5" />
+        <button type="submit">Yes</button>
+      </form>
+    </div>
+  </body>
+</html>

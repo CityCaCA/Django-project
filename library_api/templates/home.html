@@ -1,0 +1,89 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+  </head>
+  <body>
+  
+    <div>
+      {% if messages %}
+      {% for message in messages %}
+            <div class="" role="alert">
+                 <p class="alert-p"></p>{{ message }}</p>
+            </div>
+      {% endfor %}
+  {% endif %}
+    </div>
+    <div>
+      <h2> Api links</h2>
+      <ul>
+        <h3> Links to query forms</h3>
+      
+        <li>
+          GET, POST
+          <a href="{% url 'get_books' %}"> 27.0.0.1:8000/api/v1/books/ - renders a form where the user can query the database for books</a>
+        </li>
+        <li>
+          GET, POST
+          <a href="{% url 'get_book_to_update' %}"> 27.0.0.1:8000/api/v1/books/update_book/ - renders a form where the user can choose a book to update by id</a>
+        </li>
+        <li>
+          GET, POST
+          <a href="{% url 'get_book_to_delete' %}"> 27.0.0.1:8000/api/v1/books/delete_book/ - renders a form where the user can choose a book to delete by id</a>
+        </li>
+        <li>
+          GET, POST
+          <a href="{% url 'get_book_to_rate' %}"> 27.0.0.1:8000/api/v1/books/rate_book/ - renders a form where the user can choose a book to rate by id</a>
+        </li>
+        <li>
+          GET, POST
+          <a href="{% url 'get_book_to_reserve' %}"> 27.0.0.1:8000/api/v1/books/reserve_book/ - renders a form where the user can choose a book to reserve by id</a>
+        </li>
+        <li>
+          GET, POST
+          <a href="{% url 'get_book_to_unreserve' %}"> 27.0.0.1:8000/api/v1/books/unreserve_book/ - renders a form where the user can choose a book to unreserve by id</a>
+        </li>
+        <li>
+          GET, POST
+          <a href="{% url 'add_book' %}"> 27.0.0.1:8000/api/v1/books/add_book/ - shows a forms to add book to database on POST</a>
+        </li>
+        <li>
+          GET, POST
+          <a href="{% url 'update_book' pk=240 %}"> 27.0.0.1:8000/api/v1/books/update/[ID] - render a form to update an existing book in the database on ID</a>
+        </li>
+         
+        </ul>
+          <ul>
+            <h3> Routes to endpoints</h3>
+            <li>
+              GET for the book model - returns a list of all the books in the system
+              <a href="{% url 'book_list' %}"> 27.0.0.1:8000/api/v1/books/</a>
+            </li>
+              <li>
+                Post
+                <a href="{% url 'books' pk=20  %}"> 27.0.0.1:8000/api/v1/books/[ID] - returns a book in the system by id</a>
+              </li>
+              <li>
+                POST
+                <a href="{% url 'delete_book' pk=2001 %}"> 27.0.0.1:8000/api/v1/books/delete_book/[ID] - deletes book in database by id </a>
+              </li>
+              <li>
+                POST
+                <a href="{% url 'rate_book' pk=20 rating_value=4 %}"> 27.0.0.1:8000/api/v1/books/[ID]/rate_book/[VALUE] - updates a retrived book's ratings depending on the values passed through</a>
+              </li>
+          
+          <li>
+            POST
+            <a href="{% url 'reserve_book' pk=48 %}"> 27.0.0.1:8000/api/v1/books/[ID]/reserve_book/ - changes a books status to reserved if available</a>
+          </li>
+          <li>
+              POST
+            <a href="{% url 'unreserve_book' pk=48 %}"> 27.0.0.1:8000/aapi/v1/books/[ID]/reserve_book/ -  changes a books status to available if reserved</a>
+          </li>
+
+      </ul>
+    </div>
+  
+  </body>
+</html>

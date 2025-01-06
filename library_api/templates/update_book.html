@@ -1,0 +1,16 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Update Book</title>
+  </head>
+  <body>
+    <div>
+      <form action="{% url 'update_book' pk=pk %}" method="POST">
+        {% csrf_token%} {{ form }}
+        <button type="submit">Update Book</button>
+        <a href="{% url 'home' %}"> Go back</a>
+      </form>
+    </div>
+  </body>
+</html>

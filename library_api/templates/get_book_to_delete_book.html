@@ -1,0 +1,19 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delete book id</title>
+  </head>
+  <body>
+    <div>
+      <form action="{% url 'get_book_to_delete' %}" method="POST">
+        {% csrf_token%}
+        <label for="pk"> Book to delete</label>
+        <input type="number" name="pk" min="0" />
+        <h2>Do you want to delete this record?</h2>
+        <button type="submit">Yes</button>
+        <a href="{% url 'home' %}"> Back</a>
+      </form>
+    </div>
+  </body>
+</html>

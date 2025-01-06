@@ -1,0 +1,22 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unreserve Book</title>
+  </head>
+  <body>
+    <div>
+      <form action="{% url 'get_book_to_unreserve' %}" method="POST">
+        <h2>To unreserve a book</h2>
+
+        {% csrf_token%}
+        <label for="pk"> Book to unreserve</label>
+        <input type="number" name="pk" min="0" />
+        <button type="submit">Yes</button>
+      </form>
+    </div>
+    <div>
+      <a href="{% url 'home' %}"> Back</a>
+    </div>
+  </body>
+</html>
